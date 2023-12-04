@@ -40,6 +40,7 @@ namespace Web_MultipleJoin.Controllers
                 entities.SaveChanges();
                 return RedirectToAction("Index");   
                 //return View();
+
             }
             return View();
         }
