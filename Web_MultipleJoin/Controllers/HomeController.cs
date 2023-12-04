@@ -39,7 +39,7 @@ namespace Web_MultipleJoin.Controllers
                 entities.Subjects.Add(totalDetail.subject);
                 entities.SaveChanges();
                 return RedirectToAction("Index");   
-
+                //return View();
             }
             return View();
         }
