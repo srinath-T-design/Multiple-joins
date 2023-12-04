@@ -1,0 +1,43 @@
+﻿@model Web_MultipleJoin.ViewModel.TotalDetail
+@{
+    ViewBag.Title = "Detail";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Product Details</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   <dt>
+       @Html.DisplayNameFor(x=>x.student.Id)
+   </dt>
+    <dd>
+        @Html.DisplayFor(x=>x.student.Id)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(x=>x.subject.subjectname)
+    </dt>
+    <dd>
+        @Html.DisplayFor(x=>x.subject.subjectname)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(x=>x.student.Firstname)
+    </dt>
+    <dd>
+        @Html.DisplayFor(x=>x.student.Firstname)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(x => x.student.Lastname)
+    </dt>
+    <dd>
+        @Html.DisplayFor(x=>x.student.Lastname)
+    </dd>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+}
+

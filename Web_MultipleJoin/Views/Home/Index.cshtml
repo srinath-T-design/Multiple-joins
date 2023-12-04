@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Web_MultipleJoin.ViewModel.TotalDetail>
+
+@{ 
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <h4>Index</h4>
+    <body>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                </th>
+            </tr>
+            @if (Model != null)
+            {
+
+
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.student.Id</td>
+                        <td>@item.subject.subjectname</td>
+                        <td>@item.student.Firstname</td>
+                        <td>@item.student.Lastname</td>
+
+                        <td>
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.student.Id }) |
+                            @Html.ActionLink("Detail", "Detail", new { id = item.student.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.student.Id },
+
+                            new { onclick = "return confirm('Are sure wants to delete?');" })
+
+                        </td>
+
+                    </tr>
+                }
+            }
+
+        </table>
+    </body>
+</head>
+</html>
