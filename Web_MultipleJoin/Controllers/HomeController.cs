@@ -31,14 +31,14 @@ namespace Web_MultipleJoin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(TotalDetail totalDetail)
+        public ActionResult Create(TotalDetail totalDetail) 
         {
             if (ModelState.IsValid)
             {
                 entities.Students.Add(totalDetail.student);
                 entities.Subjects.Add(totalDetail.subject);
                 entities.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");   
 
             }
             return View();
